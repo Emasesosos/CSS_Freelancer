@@ -10,4 +10,88 @@ html {
 
 body {
     @include box-sizing(border-box); 
+    font-family: $fuenteSecundaria;
+} 
+
+.contenedor {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
 }
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+p {
+    font-family: $fuentePrincipal;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+/* ***** => HERO <= ***** */
+
+.hero {
+    background-image: url('./../img/fondo.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .contenedor {
+        display: grid;
+        align-content: center;
+        height: 100vh;
+        .contenido {
+            text-align: center;
+            color: $claro;
+            .titulo {
+                margin: 0;
+            }
+            .subtitulo {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+/* ***** => SERVICIOS <= ***** */
+
+.servicios {
+    text-align: center;
+    margin-top: 3rem;
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-column-gap: 2rem;
+    }
+    h2 {
+        padding-bottom: 0.5rem;
+        &::after {
+            height: 0.5rem;
+            width: 7rem;
+            background-color: $primario;
+            content: '';
+            display: block;
+            margin: 1rem auto 0 auto;
+        }
+    }
+    .servicio {
+        i {
+            font-size: 3rem;
+            color: $secundario;
+        }
+    }
+}
+
+/* ***** => PORTAFOLIO <= ***** */
