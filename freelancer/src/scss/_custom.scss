@@ -42,7 +42,6 @@ p {
 }
 
 /* ***** => HERO <= ***** */
-
 .hero {
     background-image: url('./../img/fondo.jpg');
     height: 100vh;
@@ -66,7 +65,6 @@ p {
 }
 
 /* ***** => SERVICIOS <= ***** */
-
 .servicios {
     text-align: center;
     margin-top: 3rem;
@@ -95,3 +93,40 @@ p {
 }
 
 /* ***** => PORTAFOLIO <= ***** */
+.listado {
+    .elemento {
+        border-bottom: 1px solid #5b5b5b;
+        margin-bottom: 3rem;
+        .elemento:last-of-type {
+            border: none;
+        }
+    }
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        grid-auto-rows: max-content;
+        .elemento {
+            border: none;
+        }
+    }
+    .elemento:nth-child(3) {
+        grid-row-end: span 2;
+    }
+}
+
+/* ***** => FOOTER <= ***** */
+.footer {
+    background-image: url('./../img/contacto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $claro;
+    padding: 2rem 0;
+    margin-top: 5rem;
+    .contenedor {
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 30%) auto;   
+        }
+    }
+}
